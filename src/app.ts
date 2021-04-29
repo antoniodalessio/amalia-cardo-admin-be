@@ -22,35 +22,32 @@ class App {
 
   constructor() {
 
+    console.log("app init")
+    this.setupExpress()
+    this.initMongoose()
 
-    this.test() 
-
-    // console.log("app init")
-    // this.setupExpress()
-    // this.initMongoose()
-
-    // const seoHelper:SeoHelper = new SeoHelper()
-    // seoHelper.downloadHtaccess()
+    const seoHelper:SeoHelper = new SeoHelper()
+    seoHelper.downloadHtaccess()
 
     
 
   }
 
-  async test() {
-    try {
+  // async test() {
+  //   try {
 
-      console.log(process.env.FTP_HOST, 21, process.env.FTP_USER, process.env.FTP_PWD)
-      var clientftp = new FTP('ftp.amaliacardo.it', 21, '7489922@aruba.it', 'Password1847', true);
-      //console.log(clientftp)
-      let access = await clientftp.client.access(clientftp.settings);
-      console.log(access)
-      let upload = await clientftp.client.upload(fs.createReadStream('./server.js'), './www.amaliacardo.it/server.js');
-      console.log(upload)
+  //     console.log(process.env.FTP_HOST, 21, process.env.FTP_USER, process.env.FTP_PWD)
+  //     var clientftp = new FTP('ftp.amaliacardo.it', 21, '7489922@aruba.it', 'Password1847', true);
+  //     //console.log(clientftp)
+  //     let access = await clientftp.client.access(clientftp.settings);
+  //     console.log(access)
+  //     let upload = await clientftp.client.upload(fs.createReadStream('./server.js'), './www.amaliacardo.it/server.js');
+  //     console.log(upload)
 
-    }catch(e) {
-      console.log(e)
-    }
-  }
+  //   }catch(e) {
+  //     console.log(e)
+  //   }
+  // }
 
   setupExpress() {
     this._expressApp = express();
