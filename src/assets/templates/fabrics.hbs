@@ -1,0 +1,45 @@
+---
+
+key: all_fabrics
+
+---
+
+
+<div class="content">
+
+	<div class="content--wrapper">
+		{{> menu}}
+		<img class="logo" src="/images/logo.png" alt="logo Amalia cardo" />
+	</div>
+	
+    <div class="column--second">
+        <div class="logo--version--two">
+            <a alt="Amalia Cardo Stilista, sarta e modellista a Firenze" href="/">
+                <img class="logo" src="/images/logo.png" alt="logo Amalia Cardo"/>
+            </a>
+        </div>
+
+        <div>
+
+            <h1>{{title}}</h1>
+            <p class="description">{{{description}}}</p>
+
+            <div class="thumb-list">
+            {{#each resources.fabrics}}
+                {{#if active}}
+                <a href="/images/work/{{this.thumb_preview}}_x2.jpg">
+                    <img loading="lazy" src="/images/work/{{this.thumb_preview}}_thumb.jpg"  />
+                    <p class="black">
+                        {{cod}}
+                    </p>
+                </a>
+                {{/if}}
+            {{/each}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="js/product.min.js" async deferred></script>

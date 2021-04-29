@@ -1,0 +1,29 @@
+.popup-container {
+    padding: 20px;
+    width: auto;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+
+    header {
+        margin-bottom: 20px;
+        a {
+            opacity: 0.5;
+            padding: 5px 10px;
+            color: black;
+            &.active {
+                opacity: 1;
+                color: white;
+                background: #e4b01e;
+            }
+        }
+    }
+
+    section {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+
+ }

@@ -1,0 +1,64 @@
+---
+contact: active
+key: contact
+---
+
+<div class="content full-page">
+	<div class="content--wrapper">
+		{{> menu}}
+		<img class="logo" src="/images/logo.png" alt="logo Amalia cardo" />
+	</div>
+	<div class="column--second">
+		<div class="images">
+			<a alt="Amalia Cardo Stilista, sarta e modellista a Firenze" href="/">
+                <img class="logo" src="/images/logo.png" alt="logo Amalia Cardo"/>
+            </a>
+			<img class="site-bg" src="images/bg_site_x2.webp" />
+		</div>
+	</div>
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<div class="column--third contact-wrapper">
+		<h1>Richiedi informazioni</h1>
+		<div class="description">{{{this.body}}}</div>
+		<form class="contactForm" method="POST" action="https://amaliacardo.cloudno.de/public/contact?type=simple">
+			<div class="form-messages"></div>
+
+			<div class="field-container">
+				<label rel="name">Nome*</label>
+				<input type="text" class="name" name="name" minlength="2" required>
+				<div class="error name"></div>
+			</div>
+			
+			<div class="field-container">
+				<label rel="email">Email*</label>
+				<input type="email" class="email" name="email" required >
+				<div class="error email"></div>
+			</div>
+
+			<div class="field-container">
+				<label rel="message">Richiesta*</label>
+				<textarea class="message" name="message" required></textarea>
+				<div class="error message"></div>
+			</div>
+
+			<div class="g-recaptcha" data-sitekey="6LfNxfQUAAAAAAyNejuUvrXmV7BMG35FWPGrY9N4"></div>
+
+			<div class="informativa-privacy">
+				<h5>Termini e condizioni</h5>
+				<p>Desideriamo farti sapere come conserveremo i tuoi dati, per quanto tempo e per quali finalità. Potrai in ogni momento richiederci la loro cancellazione</p>
+				<input type="checkbox" class="privacy" name="privacy" required ><label rel="privacy">Acconsento alla vostra <a class="popup" href="/privacy-policy.html">Informativa sulla privacy</a></label>
+			</div>
+
+			<button type="submit"><span class="label">INVIA</span><span class="loader"><img src="/images/loader.gif"/></span></button>
+			<div class="info-message"></div>
+		</form>
+		<div class="success-message"></div>
+	</div>
+</div>
+
+
+
+
+<script src="js/{{key}}.min.js" async deferred></script>

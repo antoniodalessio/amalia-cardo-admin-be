@@ -1,0 +1,47 @@
+.social {
+	li {
+		float: left;
+		margin-right: 5px;
+		.icon {
+			font-size: 24px;
+		}
+		a {
+			padding: 5px;
+		}
+	}
+	span {
+		display: none;
+	}
+	&-facebook {
+		.icon {
+			@extend .icon_facebook;
+		}
+		a:hover {
+			background-color: #3b5998;
+		}
+	}
+	&-flickr {
+		.icon {
+			@extend .icon_flickr;
+		}
+		a:hover {
+			background-color: #ff0084;
+		}
+	}
+	&-linkedin {
+		.icon {
+			@extend .icon_linkedin;
+		}
+		a:hover {
+			background-color: #007bb5;
+		}
+	}
+	&-instagram {
+		.icon {
+			@extend .icon_instagram;
+		}
+		a:hover {
+			background-color: #125688;
+		}
+	}
+}

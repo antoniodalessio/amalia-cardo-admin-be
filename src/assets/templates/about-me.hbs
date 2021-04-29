@@ -1,0 +1,40 @@
+---
+whoiam: active
+key: about
+---
+
+<div class="content full-page">
+	<div class="content--wrapper">
+		{{> menu}}
+		<img class="logo" src="/images/logo.png" alt="logo Amalia cardo" />
+	</div>
+	<div class="column--second">
+		<div class="images">
+			<a alt="Amalia Cardo Stilista, sarta e modellista a Firenze" href="/">
+                <img class="logo" src="/images/logo.png" alt="logo Amalia Cardo"/>
+            </a>
+			<img class="site-bg" src="images/bg_site_x2.webp" />
+		</div>
+	</div>
+
+	<div class="column--third">
+		<div class="quote">
+			<div class="quote__text quote__text--little">
+				{{{this.body}}}
+			</div>
+		</div>
+		<div class="review__container">
+			<h2>Dicono di me</h2>
+			{{#each this.resources.reviews}}
+				{{#if this.approved}}
+				<section>
+					<p class="review__text">{{this.comment}}</p>
+					<p class="quote__signature review__signature">{{this.username}} - {{this.city}}</p>
+				</section>
+				{{/if}}
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<script src="js/{{key}}.min.js" async deferred></script>

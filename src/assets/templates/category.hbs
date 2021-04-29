@@ -1,0 +1,49 @@
+---
+mywork: active
+key: work
+---	
+	
+<div class="content">
+	<div class="content--wrapper">
+		{{> menu}}
+		<img class="logo" src="/images/logo.png" alt="logo Amalia cardo" />
+	</div>
+	<div class="column--second">
+		<div class="logo--version--two">
+			<a alt="Amalia Cardo Stilista, sarta e modellista a Firenze" href="/">
+                <img class="logo" src="/images/logo.png" alt="logo Amalia Cardo"/>
+            </a>
+		</div>
+		<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+		{{#each breadcrumb}}
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<a itemprop="item" href="/{{this.slug}}.html">
+					<span itemprop="name">{{this.label}}</span>
+				</a>
+				<span class="space">>></span>
+				<meta itemprop="position" content="{{@index}}" />
+			</li>
+		{{/each}}
+		</ol>
+		<h1 class="work__title">{{title}}</h1>
+		<div class="description">{{{text}}}</div>
+		<div class="thumb-list">
+			{{#each categories}}
+				<a href="/{{this.slug}}.html" title="{{this.description}}">
+					<img src="images/work/{{this.thumb_preview}}_thumb.jpg" alt="{{this.title}}" />
+					<span></span>
+					<p>{{this.category_name}}</p>
+				</a>
+			{{/each}}
+
+			{{#each products}}
+				<a href="/{{this.slug}}.html" title="{{this.description}}">
+					<img src="/images/work/{{this.thumb}}_thumb.jpg" alt="{{../category_name}} {{this.title}}" />
+					<p class="black">{{this.title}}</p>
+				</a>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<script src="js/work.min.js" async deferred></script>

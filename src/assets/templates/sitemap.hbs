@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        {{#each resources}}
+        <url>
+            <loc>{{../baseUrl}}/{{this.slug}}.html</loc>
+             {{#if this.images}}
+             {{#each this.images}}
+             <image:image>
+                <image:caption>{{this.alt}}</image:caption>
+                <image:geo_location>Florence, Italy</image:geo_location>
+                <image:loc>{{../../baseUrl}}/images/work/{{this.uri}}_thumb.jpg</image:loc>
+              </image:image>
+              {{/each}}
+            {{/if}}
+        </url>
+        {{/each}}
+    </urlset>

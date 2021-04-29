@@ -1,0 +1,57 @@
+---
+home: active
+key: index
+---
+ 
+<div class="content">
+	
+	<div class="content--wrapper">
+		{{> menu}}
+		<a href="/">
+			<img class="logo" src="/images/logo.png" alt="logo Amalia cardo" />
+		</a>
+	</div>
+	<div class="images column--second">
+		<a alt="Amalia Cardo Stilista, sarta e modellista a Firenze" href="/">
+			<img class="logo" src="/images/logo.png" alt="Logo Amalia Cardo"/>
+		</a>
+		<img class="site-bg" src="/images/bg_site_x2.webp" alt="sfondo Amalia Cardo"/>
+	</div>
+	<div class="column--third">
+		<div class="quote quote--big">
+			<p class="quote__text">La moda, parte della statistica,<br /> non è elegante come la matematica. Si prende in prestito la regolarità per formalizzare il caos.</p>
+			<br>
+			<span class="quote__signature">Amalia Cardo</span>
+		</div>
+	</div>
+</div>
+
+{{> categoriesmenu }}
+
+<main>
+	{{#if (and this.body this.subbody)}}
+	<div class="project-description">
+		{{#if (and this.title this.body)}}
+		<section>
+			<h1>{{this.title}}</h1>
+			<div class="project-description__content">
+			{{{this.body}}}
+			</div>
+		</section>
+		{{/if}}
+		{{#if (and this.subtitle this.subbody)}}
+		<section>
+			<h2>{{this.subtitle}}</h2>
+			<div class="project-description__content">
+			{{{this.subbody}}}
+			</div>
+		</section>
+		{{/if}}
+	</div>
+	{{/if}}
+
+	{{> categories }}
+</main>
+
+
+<script src="/js/index.min.js" async deferred></script>

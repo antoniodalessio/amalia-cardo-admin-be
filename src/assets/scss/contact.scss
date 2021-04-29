@@ -1,0 +1,105 @@
+@import "common";
+
+.contact-wrapper {
+	line-height: 20px;
+}
+
+a.link {
+	color: $yellow;
+}
+
+form {
+	.field-container {
+		border-bottom: 1px solid $yellow;
+		margin-bottom: 10px;
+		input, textarea {
+			border: none;
+			font-size: 20px;
+			width: 100%;
+			padding: 8px;
+			box-sizing: border-box;
+			background-color: #f8ecca;
+		}
+		textarea {
+			height: 80px;
+		}
+		label {
+			font-size: 20px;
+		}
+	}
+
+	.info-message {
+		font-size: 18px;
+		padding: 20px 0;
+	}
+
+	label.error {
+		font-size: 12px;
+		color: red;
+	}
+
+	.informativa-privacy {
+		background-color: #f8ecca;
+		border-radius: 10px;
+		padding: 10px;
+		margin: 10px 0;
+		position: relative;
+		box-sizing: border-box;
+		h5 {
+			margin-bottom: 10px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		p {
+			margin-bottom: 10px;
+		}
+		input[type="checkbox"] {
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		label.error {
+			position: absolute;
+			bottom: 5px;
+			right: 10px;
+		}
+		@media (max-width: 1025px) {
+			padding-bottom: 30px;
+			label.error {
+				bottom: 5px;
+				right: inherit;
+				left: 13px
+			}
+		}
+	}
+
+	button {
+		background-color: $yellow;
+		color: white;
+		width: 100%;
+		height: 50px;
+		font-size: 20px;
+		.loader {
+			display: none;
+		}
+		&.loading {
+			background-color: #fff;
+			.label {
+				display: none;
+			}
+			.loader {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.success-message {
+	display: none;
+	text-align: center;
+    font-size: 26px;
+	line-height: 36px;
+	background-color: #f8ecca;
+	padding: 20px;
+	border-radius: 10px;
+}

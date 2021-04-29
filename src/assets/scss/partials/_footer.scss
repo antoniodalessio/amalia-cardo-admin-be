@@ -1,0 +1,64 @@
+footer {
+	position: relative;
+	top: -3px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	background-color: $black;
+	color: $white;
+	padding: 20px 0;
+	@media (max-width: 1025px) {
+	  	display: block;
+	  	margin-top: 10px;
+	}
+	a {
+		color: $white;
+	}
+	.info {
+		flex-grow: 1;
+		.icon {
+			margin-right: 10px;
+			color: #e4b01e;
+		}
+	}
+	.contact {
+		flex-grow: 2;
+	}
+	.social-container {
+		margin-right: 30px;
+		height: 100%;
+		.signature {
+			font-size: 12px;
+			position: absolute;
+			bottom: 10px;
+		}
+		@media (max-width: 1025px) {
+			margin-right: 0;
+		}
+	}
+	section {
+		padding-left: 20px;
+		height: 100%;
+		header {
+			text-transform: uppercase;
+			font-size: 14px;
+			margin-bottom: 20px;
+			font-family: 'OpenSansCondensedBold', sans-serif;
+		}
+		> div {
+			line-height: 26px;
+			font-size: 14px;
+		}
+		@media (max-width: 1025px) {
+	  		margin-bottom: 20px;
+	  		border-bottom: 1px solid $yellow;
+	  		padding-bottom: 10px;
+	  		&:last-child {
+	  			border: 0 solid;
+	  		}
+	  		header {
+	  			margin-bottom: 10px;
+	  		}
+		}
+	}
+}

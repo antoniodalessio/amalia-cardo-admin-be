@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="google-site-verification" content="M4WdPlMCybIUcDXkN8kmVuexMnosRaBX_Pf-ZvAgnNE" />
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<meta name="keywords" content="{{meta.keywords}}">
+
+<meta property="og:title" content="{{meta.title}}" />
+<meta property="og:description" content="{{meta.description}}" />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:image" content="{{pageImage}}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.amaliacardo.it/{{slug}}.html" />
+
+<meta property="twitter:text:title" content="{{meta.title}}">
+<meta property="twitter:card" content="app" />
+<meta property="twitter:title" content="{{meta.title}}" />
+<meta property="twitter:description" content="{{meta.description}}" />
+<meta property="twitter:image" content="{{pageImage}}" />
+
+<meta name="robots" content="index,follow">
+<meta name="language" content="it">
+<meta name="author" content="Amalia cardo">
+<meta name="designer" content="Antonio D'Alessio">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="apple-touch-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Open+Sans+Condensed:300,700" rel="stylesheet" async>
+<link rel="stylesheet" href="/css/{{key}}.css" async>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+{{#if (eq template "index")}}
+<link rel="canonical" href="https://www.amaliacardo.it" />
+{{/if}}
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "Amalia Cardo",
+ "url" : "https://www.amaliacardo.it",
+ "sameAs" : [
+   "https://www.facebook.com/cardoamalia",
+   "https://www.flickr.com/photos/kismat_",
+   "https://it.linkedin.com/in/cardo-amalia-10400928",
+   "https://www.instagram.com/amaliacardo/"
+   ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via del Rondinino, 7",
+    "addressRegion": "toscana",
+    "postalCode": "50135",
+    "addressCountry": "italy",
+	"addressLocality": "Firenze"
+  }
+}
+</script>

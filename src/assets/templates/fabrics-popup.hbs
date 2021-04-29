@@ -1,0 +1,52 @@
+ <link rel="stylesheet" href="/css/fabrics.css">
+ <script src="js/fabrics.min.js" async deferred></script>
+
+ <div class="popup-container">
+    
+    <header>
+        {{#if fabrics.external}}
+        <a href="#" class="active">Tessuti esterni</a>
+        {{/if}}
+
+        {{#if fabrics.internal}}
+        <a href="#">Tessuti interni</a>
+        {{/if}}
+    </header>
+
+    <div class="tab-content">
+        {{#if fabrics.external}}
+        <section class="active">
+            <h1>Tessuti esterni disponibili</h1>
+            <div class="thumb-list">
+                {{#each fabrics.external}}
+                    {{#if active}}
+                    <a href="#">
+                        <img loading="lazy" src="/images/work/{{thumb_preview}}_thumb.jpg" />
+                        <p class="black">
+                            {{cod}}
+                        </p>
+                    </a>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </section>
+        {{/if}}
+        {{#if fabrics.internal}}
+        <section>
+            <h1>Tessuti interni disponibili</h1>
+            <div class="thumb-list">
+                {{#each fabrics.internal}}
+                    {{#if active}}
+                    <a href="#">
+                        <img loading="lazy" src="/images/work/{{thumb_preview}}_thumb.jpg" />
+                        <p class="black">
+                            {{cod}}
+                        </p>
+                    </a>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </section>
+        {{/if}}
+    </div>
+ </div>

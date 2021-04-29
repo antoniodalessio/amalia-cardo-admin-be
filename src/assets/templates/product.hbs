@@ -1,0 +1,187 @@
+---
+mywork: active
+key: product
+---	
+
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "description": "{{{escape description}}}",
+      "name": "{{title}}",
+      "image": "{{pageImage}}",
+        "brand": {
+          "@type": "Thing",
+          "name": "Amalia Cardo"
+        },
+      "sku": "{{sku}}",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "0",
+        "availability": "InStock",
+        "url": "https://www.amaliacardo.it/{{slug}}.html",
+        "priceValidUntil": "{{priceValidUntil}}"
+      }
+      {{#if resources.reviews.length}},
+      "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "{{resources.reviews.length}}"
+        },
+      "review": [
+        {{#each resources.reviews}}
+            {
+              "@type": "Review",
+              "author": "{{username}}",
+              "datePublished": "{{publishedAt}}",
+              "description": "{{~comment~}}",
+              "name": "{{username}}",
+              "reviewRating": {
+                "@type": "Rating",
+                "bestRating": "5",
+                "ratingValue": "5",
+                "worstRating": "1"
+              }
+            }{{#if (listlt @index ../this.resources.reviews.length)}},{{/if}}
+        {{/each}}
+      ]
+      {{/if}}
+  }
+</script>
+ 
+
+
+<div class="content">
+	<div class="content--wrapper">
+		{{> menu}}
+		<img class="logo" src="/images/logo.png" alt="logo Amalia cardo" />
+	</div>
+    <div class="column--second">
+        <div class="logo--version--two">
+            <a alt="Amalia Cardo Stilista, sarta e modellista a Firenze" href="/">
+                <img class="logo" src="/images/logo.png" alt="logo Amalia Cardo"/>
+            </a>
+        </div>
+        <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+            {{#each breadcrumb}}
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/{{this.slug}}.html">
+                        <span itemprop="name">{{this.label}}</span>
+                    </a>
+                    <span class="space">>></span>
+                    <meta itemprop="position" content="{{@index}}" />
+                </li>
+            {{/each}}
+		</ol>
+        
+        <main>
+            <div class="description">
+                <h1>{{title}}</h1>
+                <p class="description">{{{description}}}</p>
+            </div>
+
+             <div class="thumb-list">
+                {{#each images}}
+                    <a href="/images/work/{{this.uri}}_x2.jpg" title="{{this.alt}}">
+                        <img loading="lazy" src="/images/work/{{this.uri}}_thumb.jpg" alt="{{this.alt}}" />
+                    </a>
+                {{/each}}
+                {{#if (or this.fabrics.internal.length this.fabrics.external.length) }}
+                    <a  href="/{{this.slug}}_fabrics.html" class="popup thumb-list__link">
+                        Scopri tutti i tessuti disponibili
+                    </a>
+                {{/if}}
+            </div>
+
+            {{#if (and this.body this.subbody)}}
+            <div class="project-description">
+                {{#if (and this.meta.title this.body)}}
+                <section>
+                    <h2>{{this.meta.title}}</h1>
+                    <div class="project-description__content">
+                    {{{this.body}}}
+                    </div>
+                </section>
+                {{/if}}
+                {{#if (and this.subtitle this.subbody)}}
+                <section>
+                    <h3>{{this.subtitle}}</h2>
+                    <div class="project-description__content">
+                    {{{this.subbody}}}
+                    </div>
+                </section>
+                {{/if}}
+            </div>
+            {{/if}}
+
+        </main>
+
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+        <div class="container-double">
+
+            <div class="formContainer">
+                <div class="title">Richiedi ulteriori informazioni sul prodotto {{title}}</div>
+                <form class="contactForm" method="POST" action="https://amaliacardo.cloudno.de/public/contact?type=product">
+                    <div class="form-messages"></div>
+
+                    <div class="field-container field-container--product-name">
+                        <input type="text" disabled class="product_name" name="product_name" value="{{this.title}}">
+                    </div>
+
+                    <div class="field-container">
+                        <label rel="name">Nome*</label>
+                        <input type="text" class="name" name="name" minlength="2" required>
+                        <div class="error name"></div>
+                    </div>
+                    
+                    <div class="field-container">
+                        <label rel="email">Email*</label>
+                        <input type="email" class="email" name="email" required >
+                        <div class="error email"></div>
+                    </div>
+
+                    <div class="field-container">
+                        <label rel="message">Richiesta*</label>
+                        <textarea class="message" name="message" required></textarea>
+                        <div class="error message"></div>
+                    </div>
+
+                    <div class="g-recaptcha" data-sitekey="6LfNxfQUAAAAAAyNejuUvrXmV7BMG35FWPGrY9N4"></div>
+
+                    <div class="informativa-privacy">
+                        <div class="informativa-privacy--title">Termini e condizioni</div>
+                        <p>Desideriamo farti sapere come conserveremo i tuoi dati, per quanto tempo e per quali finalità. Potrai in ogni momento richiederci la loro cancellazione</p>
+                        <input type="checkbox" class="privacy" name="privacy" required ><label rel="privacy">Acconsento alla vostra <a class="popup" href="/privacy-policy.html">Informativa sulla privacy</a></label>
+                    </div>
+
+                    <input type="hidden" class="product_id" name="product_id" value="{{this._id}}">
+
+                    <button type="submit"><span class="label">INVIA</span><span class="loader"><img src="/images/loader.gif"/></span></button>
+                    <div class="info-message"></div>
+                </form>
+                <div class="success-message"></div>
+            </div>
+
+            {{#if resources.reviews}}
+            <div class="review-container">
+                <div class="reviews">
+                    <div class="title">Recensioni</div>
+                    {{#each resources.reviews}}
+                        <section>
+                            <p class="review__text">{{this.comment}}</p>
+                            <p class="quote__signature review__signature">{{this.username}} - {{this.city}}</p>
+                        </section>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+
+<script src="js/product.min.js" async deferred></script>

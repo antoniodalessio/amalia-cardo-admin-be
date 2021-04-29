@@ -1,0 +1,36 @@
+@import "common";
+
+.content .column--third {
+    overflow-y: scroll;
+    justify-content: inherit;
+}
+
+.quote {
+    padding-top: 30px;
+}
+
+.review {
+    &__container {
+        margin-top: 20px;
+        section {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            font-family: 'Abhaya Libre', serif;
+        }
+    }
+    &__text {
+        margin-bottom: 10px;
+        &:before {
+			content: '"';
+			color: $yellow;
+		}
+		&:after {
+			content: '"';
+			color: $yellow;
+		}
+    } 
+    &__signature {
+        color: #666666
+    } 
+}

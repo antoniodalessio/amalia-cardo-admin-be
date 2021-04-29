@@ -1,0 +1,13 @@
+{{#if resources.categories}}
+<div class="category-menu">
+    <ul>
+        {{#each resources.categories}}
+            <li>
+                <a href="#{{this.slug}}" title="{{this.title}}">
+                    <i class="icon icon_{{this.icon}}"></i>{{this.category_name}}
+                </a>
+            </li>
+  		{{/each}}
+    </ul>
+</div>
+{{/if}}
