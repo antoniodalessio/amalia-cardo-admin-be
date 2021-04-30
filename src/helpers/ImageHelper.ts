@@ -44,7 +44,7 @@ class ImageHelper {
 
   async createSingleImageAndUpload(name: string, size: any, suffix: string) {
     await this.createJPGAndUpload(name, size, suffix)
-    await this.createWEBPAndUpload(name, size, suffix)
+    //await this.createWEBPAndUpload(name, size, suffix)
   }
 
   async createImageFormatAndUpload(name: string) {
