@@ -57,8 +57,9 @@ module.exports = function(grunt) {
 		webfont: {
 			icons: {
 				options: {
-				stylesheet: 'scss',
-				relativeFontPath: '../fonts'
+					execMaxBuffer: 1024 * 1024,
+					stylesheet: 'scss',
+					relativeFontPath: '../fonts'
 			},
 			src: baseDir + 'svg/*.svg',
 			dest: baseDir + 'fonts',

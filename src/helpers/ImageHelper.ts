@@ -1,6 +1,7 @@
 var fs = require('fs');
 var Jimp = require('jimp');
 var webp = require('webp-converter');
+webp.grant_permission();
 import FTP from './../utils/ftp'
 
 var clientftp = new FTP(process.env.FTP_HOST, 21, process.env.FTP_USER, process.env.FTP_PWD, false);
