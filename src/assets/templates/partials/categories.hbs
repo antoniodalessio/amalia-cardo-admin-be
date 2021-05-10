@@ -6,17 +6,19 @@
         <div>{{{this.text}}}</div>
         <ul>
         {{#each (limit this.products 3) }}
-            {{#each (limit this.images 1) }}
-                <li>
-                    <a href="/{{../this.slug}}.html" title={{../this.description}}>
-                        <img loading="lazy" alt="{{this.alt}}" src="https://www.amaliacardo.it/images/work/{{this.uri}}_thumb.jpg" />
-                        <div class="overlay">
-                            <span class="background"></span>
-                            <span class="text">{{../this.title}}</span>
-                        </div>
-                    </a>
-                </li>
-            {{/each}}
+            {{#if this.enabled}}
+                {{#each (limit this.images 1) }}
+                    <li>
+                        <a href="/{{../this.slug}}.html" title={{../this.description}}>
+                            <img loading="lazy" alt="{{this.alt}}" src="https://www.amaliacardo.it/images/work/{{this.uri}}_thumb.jpg" />
+                            <div class="overlay">
+                                <span class="background"></span>
+                                <span class="text">{{../this.title}}</span>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            {{/if}}
         {{/each}}
          <li class="category-container__link">
              <a href="/{{this.slug}}.html">
