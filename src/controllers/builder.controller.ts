@@ -294,11 +294,12 @@ class BuilderController {
     let result = await this.upload()
     if (process.env.ENV == 'prod') {
       await this.clearFolder()
+      await this.buildSitemapXml()
+      await this.seoHelper.uploadHtaccess()
+      await this.seoHelper.downloadHtaccess()
     }
 
-    await this.buildSitemapXml()
-    await this.seoHelper.uploadHtaccess()
-    await this.seoHelper.downloadHtaccess()
+    
 
     res.status(200).json(result);
   }

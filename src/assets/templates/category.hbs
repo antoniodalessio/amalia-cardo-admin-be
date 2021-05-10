@@ -29,18 +29,22 @@ key: work
 		<div class="description">{{{text}}}</div>
 		<div class="thumb-list">
 			{{#each categories}}
+				{{#if this.enabled}}
 				<a href="/{{this.slug}}.html" title="{{this.description}}">
 					<img src="images/work/{{this.thumb_preview}}_thumb.jpg" alt="{{this.title}}" />
 					<span></span>
 					<p>{{this.category_name}}</p>
 				</a>
+				{{/if}}
 			{{/each}}
 
 			{{#each products}}
+				{{#if this.enabled}}
 				<a href="/{{this.slug}}.html" title="{{this.description}}">
 					<img src="/images/work/{{this.thumb}}_thumb.jpg" alt="{{../category_name}} {{this.title}}" />
 					<p class="black">{{this.title}}</p>
 				</a>
+				{{/if}}
 			{{/each}}
 		</div>
 	</div>

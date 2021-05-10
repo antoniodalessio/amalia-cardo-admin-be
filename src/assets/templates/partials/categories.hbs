@@ -1,5 +1,6 @@
 {{#if resources.categories}}
 {{#each resources.categories}}
+    {{#if this.enabled}}
     <section id="{{this.slug}}" class="category-container">
         <h3>{{this.title}}</h3>
         <div>{{{this.text}}}</div>
@@ -26,5 +27,6 @@
          </li>
      </ul>
     </section>
+    {{/if}}
 {{/each}}
 {{/if}}

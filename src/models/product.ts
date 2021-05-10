@@ -23,6 +23,7 @@ const product: Schema = new Schema(Object.assign(defaultPageField, {
     },
     priceValidUntil: Date,
     template: { type: String, default: 'product' },
+    enabled: { type: Boolean, default: true},
     resources: [
         { type: { type: String } }
     ]
@@ -40,6 +41,7 @@ interface IProduct extends IBasePage {
     sku: string
     price: string
     priceValidUntil: Date
+    enabled: boolean;
     resources: String[]
 }
 

@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "handlebars": "^4.7.6",
+    "http": "*",
     "jimp": "^0.10.3",
     "jquery-zoom": "^1.7.21",
     "mongoose": "5.10.14",

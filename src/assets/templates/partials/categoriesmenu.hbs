@@ -2,11 +2,13 @@
 <div class="category-menu">
     <ul>
         {{#each resources.categories}}
+            {{#if this.enabled}}
             <li>
                 <a href="#{{this.slug}}" title="{{this.title}}">
                     <i class="icon icon_{{this.icon}}"></i>{{this.category_name}}
                 </a>
             </li>
+            {{/if}}
   		{{/each}}
     </ul>
 </div>
