@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require('fs');
 var Jimp = require('jimp');
 var webp = require('webp-converter');
+webp.grant_permission();
 const ftp_1 = __importDefault(require("./../utils/ftp"));
 var clientftp = new ftp_1.default(process.env.FTP_HOST, 21, process.env.FTP_USER, process.env.FTP_PWD, false);
 class ImageHelper {
@@ -57,7 +58,7 @@ class ImageHelper {
     createSingleImageAndUpload(name, size, suffix) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.createJPGAndUpload(name, size, suffix);
-            yield this.createWEBPAndUpload(name, size, suffix);
+            //await this.createWEBPAndUpload(name, size, suffix)
         });
     }
     createImageFormatAndUpload(name) {

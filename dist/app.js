@@ -22,26 +22,13 @@ const mongoose = require('mongoose');
 var fs = require('fs');
 class App {
     constructor() {
-        //this.test() 
+        let data = "";
         console.log("app init");
         this.setupExpress();
         this.initMongoose();
         const seoHelper = new SeoHelper_1.default();
         seoHelper.downloadHtaccess();
     }
-    // async test() {
-    //   try {
-    //     console.log(process.env.FTP_HOST, 21, process.env.FTP_USER, process.env.FTP_PWD)
-    //     var clientftp = new FTP('ftp.amaliacardo.it', 21, '7489922@aruba.it', 'Password1847', true);
-    //     //console.log(clientftp)
-    //     let access = await clientftp.client.access(clientftp.settings);
-    //     console.log(access)
-    //     let upload = await clientftp.client.upload(fs.createReadStream('./server.js'), './www.amaliacardo.it/server.js');
-    //     console.log(upload)
-    //   }catch(e) {
-    //     console.log(e)
-    //   }
-    // }
     setupExpress() {
         this._expressApp = express();
         this._expressApp.use(cors({

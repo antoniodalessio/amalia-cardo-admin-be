@@ -278,10 +278,10 @@ class BuilderController {
             let result = yield this.upload();
             if (process.env.ENV == 'prod') {
                 yield this.clearFolder();
+                yield this.buildSitemapXml();
+                yield this.seoHelper.uploadHtaccess();
+                yield this.seoHelper.downloadHtaccess();
             }
-            yield this.buildSitemapXml();
-            yield this.seoHelper.uploadHtaccess();
-            yield this.seoHelper.downloadHtaccess();
             res.status(200).json(result);
         });
     }
