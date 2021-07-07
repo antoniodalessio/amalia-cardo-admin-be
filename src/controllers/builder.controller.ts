@@ -211,7 +211,9 @@ class BuilderController {
       let prod = product.toObject()
       prod.resources = [{type: 'review', filter: {product: prod._id}}]
       prod = await this.addResources(prod)
-      prod.pageImage = `${process.env.SITE_URL}${process.env.IMAGES_PATH}${prod.images[0].uri}_normal.jpg`
+      if (prod?.images && prod?.images[0] && prod?.images[0].uri) {
+        prod.pageImage = `${process.env.SITE_URL}${process.env.IMAGES_PATH}${prod.images[0].uri}_normal.jpg`
+      }
       const category = (await Category.findOne({_id: prod.category})).toObject()
       prod.breadcrumb = (await this.buildBreadCrumb(category)).reverse()
       prod.breadcrumb.push({slug: prod.slug, label: prod.title})
