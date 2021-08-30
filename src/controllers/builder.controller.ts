@@ -291,13 +291,19 @@ class BuilderController {
 
   async publish(req: any, res: any) {
 
+    console.log("publish init")
+
     let unpublished = false
     if (req.query.hasOwnProperty('unpublished')) {
       unpublished = true
     }
 
+    console.log("build init")
     await this.build(unpublished)
+    console.log("build end")
+    console.log("upload init")
     let result = await this.upload()
+    console.log("upload end")
     if (process.env.ENV == 'prod') {
       await this.clearFolder()
       await this.buildSitemapXml()
