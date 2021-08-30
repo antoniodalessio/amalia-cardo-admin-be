@@ -25,6 +25,7 @@ class FTPClient {
     try {
       let access = await this.client.access(this.settings);
       let upload = await this.client.upload(fs.createReadStream(sourcePath), remotePath);
+      console.log("upload", sourcePath)
       let permissions = await this.changePermissions(perm.toString(), remotePath);
     } catch(err) {
       console.log(err);
