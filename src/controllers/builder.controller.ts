@@ -85,9 +85,8 @@ class BuilderController {
           // get subcategory of main category
           const categories = (await Category.find({parent: _id}).sort('ord')).map((item: any) => item ? item.toObject() : null)
           for(const category of categories ) {
-            const products = (await Product.find({category: category._id}).populate('images')).map((item: any) => item ? item.toObject() : null).filter((el) => {
-              return el.enabled
-            })
+            const products = (await Product.find({category: category._id}).populate('images'))
+              .map((item: any) => item ? item.toObject() : null)
             if (products.length > 0) {
               const subcategoryProduct = await this.getProductsFromSubCategory(category._id)
               category.products = shuffle(products.concat(subcategoryProduct))
@@ -95,6 +94,11 @@ class BuilderController {
               // load products randomly? from subcategory 
               category.products = await this.getProductsFromSubCategory(category._id)
             }
+
+            category.products = category.products.filter((el: any) => {
+              return el.enabled
+            })
+
           }
           
           resources.categories = categories
