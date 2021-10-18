@@ -29,6 +29,8 @@ key: index
 {{> categoriesmenu }}
 
 <main>
+	{{> categories }}
+
 	{{#if (and this.body this.subbody)}}
 	<div class="project-description">
 		{{#if (and this.title this.body)}}
@@ -50,7 +52,6 @@ key: index
 	</div>
 	{{/if}}
 
-	{{> categories }}
 </main>
 
 
