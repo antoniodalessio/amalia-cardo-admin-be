@@ -13,6 +13,10 @@ const mongoose = require('mongoose');
 
 var fs = require('fs');
 
+import WatcherService from './services/watcher.service';
+
+import { execShellCommand } from './utils/utils'
+
 
 class App {
   
@@ -28,7 +32,10 @@ class App {
     const seoHelper:SeoHelper = new SeoHelper()
     seoHelper.downloadHtaccess()
 
-    
+    if (process.env.ENV == 'dev') {
+      new WatcherService()
+      //execShellCommand(`open http://127.0.0.1:${process.env.PORT}`)
+    }
 
   }
 
@@ -59,7 +66,7 @@ class App {
     this._expressApp.use('/api/', apiRoutes());
     this._expressApp.use('/public/', publicRoutes());
 
-    //this._expressApp.use('/', siteRoutes())
+    this._expressApp.use('/', express.static('./site'))
     
   }
 

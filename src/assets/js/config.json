@@ -1,0 +1,15 @@
+{
+    "dependenciesDir": "",
+    "common":[
+        "bower_components/jquery/dist/jquery.js",
+        "bower_components/magnific-popup/dist/jquery.magnific-popup.js",
+        "./src/assets/js/common.js"
+    ],
+    "about": [],
+    "contact": ["bower_components/jquery-validation/dist/jquery.validate.min.js"],
+    "fabrics": ["bower_components/jquery-zoom/jquery.zoom.js"],
+    "index": [],
+    "product": ["bower_components/jquery-validation/dist/jquery.validate.min.js"],
+    "what": [],
+    "work": []
+}

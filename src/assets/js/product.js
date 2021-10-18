@@ -71,6 +71,16 @@ function initContactForm() {
 
 } 
 
+function relatedLabel() {
+    var offsetThumbButton = $('.thumb-list__link').position().top
+    console.log(offsetThumbButton, $(window).scrollTop())
+    if ($(window).scrollTop() > offsetThumbButton - 500) {
+        $('.related-label').addClass('visible')
+    }else{
+        $('.related-label').removeClass('visible')
+    }
+}
+
 
 $(document).ready(function(){
 	$('.thumb-list:not(.thumb-list__link)').magnificPopup({
@@ -92,4 +102,10 @@ $(document).ready(function(){
   });
 
   initContactForm()
+  console.log("releatedLabel init")
+  $(window).on('scroll', function() {
+    relatedLabel()
+  })
+  
+
 });

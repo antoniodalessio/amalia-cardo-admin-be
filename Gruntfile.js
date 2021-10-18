@@ -43,7 +43,6 @@ module.exports = function(grunt) {
 						baseDir + 'js/product.js'
 					]),
 					[destDir + 'js/fabrics.min.js']: [
-						bowerDir + 'jquery/dist/jquery.js',
 						nodeDir + 'jquery-zoom/jquery.zoom.js'
 					].concat([baseDir + 'js/fabrics.js']),
 					[destDir + 'js/work.min.js']: common.concat([baseDir + 'js/work.js']),
