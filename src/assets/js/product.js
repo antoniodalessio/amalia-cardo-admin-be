@@ -73,7 +73,8 @@ function initContactForm() {
 
 function relatedLabel() {
     var offsetThumbButton = $('.thumb-list__link').position().top
-    if ($(window).scrollTop() > offsetThumbButton - 500) {
+    
+    if ($(window).scrollTop() > offsetThumbButton - 1000) {
         $('.related-label').addClass('visible')
     }else{
         $('.related-label').removeClass('visible')
@@ -101,6 +102,7 @@ $(document).ready(function(){
   });
 
   initContactForm()
+  console.log("releatedLabel init")
   $(window).on('scroll', function() {
     relatedLabel()
   })
