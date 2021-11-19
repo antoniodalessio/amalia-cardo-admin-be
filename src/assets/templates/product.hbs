@@ -91,6 +91,7 @@ key: product
                 {{#each images}}
                     <a href="/images/work/{{this.uri}}_x2.jpg" title="{{this.alt}}">
                         <img loading="lazy" src="/images/work/{{this.uri}}_thumb.jpg" alt="{{this.alt}}" />
+                        <p class="black">{{this.alt}}</p>
                     </a>
                 {{/each}}
                 {{#if (or this.fabrics.internal.length this.fabrics.external.length) }}
