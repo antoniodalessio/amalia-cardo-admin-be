@@ -45,7 +45,7 @@ $(document).ready(function(){
             $('.contactForm button').addClass("loading")
     
             $.ajax({
-                url: 'https://amaliacardo.cloudno.de/public/contact',
+                url: 'http://lianto.ns0.it:15645/public/contact',
                 type: 'POST',
                 data: JSON.stringify(msg),
                 contentType: 'application/json',
