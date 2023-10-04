@@ -44,7 +44,7 @@ function initContactForm() {
             $('.contactForm button').addClass("loading")
     
             $.ajax({
-                url: 'http://lianto.ns0.it:15645/public/contact',
+                url: 'https://www.amaliacardo.it/contact.php',
                 type: 'POST',
                 data: JSON.stringify(msg),
                 contentType: 'application/json',
