@@ -37,10 +37,11 @@ function initContactForm() {
                 name: formData[0].value,
                 email: formData[1].value,
                 message: formData[2].value,
-                productId: formData[5].value
+                'g-recaptcha-response': formData[3].value,
+                productId: formData[5].value,
+                productName: formData[6].value
             }
     
-            msg['g-recaptcha-response'] = formData[3].value
             $('.contactForm button').addClass("loading")
     
             $.ajax({
